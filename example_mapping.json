@@ -1,0 +1,33 @@
+{
+  "mappings": {
+    "properties": {
+      "title": {
+        "type": "text",
+        "analyzer": "standard"
+      },
+      "author": {
+        "type": "keyword"
+      },
+      "published_date": {
+        "type": "date",
+        "format": "yyyy-MM-dd"
+      },
+      "content": {
+        "type": "text",
+        "analyzer": "english"
+      },
+      "tags": {
+        "type": "keyword"
+      },
+      "views": {
+        "type": "integer"
+      },
+      "rating": {
+        "type": "float"
+      },
+      "location": {
+        "type": "geo_point"
+      }
+    }
+  }
+} 
