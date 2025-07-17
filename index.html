@@ -11,6 +11,13 @@
 <body>
     <h1>Elasticsearch Mapping Diagram</h1>
     <pre class="mermaid">
+classDiagram
+    style Document fill:#add8e6
+
+    class Document {
+        +keyword nom
+        +text description
+    }
     </pre>
     <script>
         mermaid.initialize({ startOnLoad: true });
