@@ -1,0 +1,28 @@
+{
+  "mappings": {
+    "products": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer"
+        },
+        "books": {
+          "type": "nested",
+          "properties": {
+            "author":{
+               "type": "string"
+            },
+            "title": {
+                "type": "string"
+            }
+          }
+        },
+        "colors": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
