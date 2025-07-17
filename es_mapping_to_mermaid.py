@@ -56,3 +56,27 @@ def convert_es_mapping_to_mermaid(json_data):
     return "\n".join(mermaid_diagram_parts)
 
 
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python es_mapping_to_mermaid.py <chemin_vers_fichier_json_de_mapping>")
+        sys.exit(1)
+
+    json_file_path = sys.argv[1]
+    
+    try:
+        with open(json_file_path, 'r') as f:
+            mapping_data = json.load(f)
+        
+        mermaid_output = convert_es_mapping_to_mermaid(mapping_data)
+        print(mermaid_output)
+
+    except FileNotFoundError:
+        print(f"Erreur : Fichier non trouvé à {json_file_path}")
+        sys.exit(1)
+    except json.JSONDecodeError:
+        print(f"Erreur : Format JSON invalide dans {json_file_path}")
+        sys.exit(1)
+    except Exception as e:
+        print(f"Une erreur inattendue est survenue : {e}")
+        sys.exit(1) 
+
